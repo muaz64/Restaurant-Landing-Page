@@ -16,3 +16,13 @@
 #about img {
     border-radius:10px;
 }
+
+/* Menu Section */
+#menu h2 {
+    margin-bottom: 40px;
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+}

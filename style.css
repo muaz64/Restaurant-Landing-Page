@@ -1,0 +1,12 @@
+* Hero Section Customization */
+#hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+#hero p {
+    font-size: 1.5rem;
+}
+#hero a {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+}

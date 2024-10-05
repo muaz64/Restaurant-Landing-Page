@@ -1,4 +1,5 @@
-* Hero Section Customization */
+/* Hero Section Customization */
+
 #hero h1 {
     font-size: 4rem;
     font-weight: 700;
@@ -9,4 +10,9 @@
 #hero a {
     padding: 10px 30px;
     font-size: 1.2rem;
+}
+
+/* About Section */
+#about img {
+    border-radius:10px;
 }

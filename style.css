@@ -13,16 +13,31 @@
 }
 
 /* About Section */
+#about{
+   background-color: #fdf6ed;
+}
 #about img {
-    border-radius:10px;
+    border-radius:47%;
 }
 
 /* Menu Section */
+#menu{
+    background-color: #deb887;
+}
 #menu h2 {
     margin-bottom: 40px;
 }
 
+.card{
+    background-color: #f8e9d6;
+}
+
 .card img {
-    height: 300px;
+
+     height: 350px;
     object-fit: cover;
+}
+/* contact Section */
+#contact{
+    background-color: #fdf6ed;
 }

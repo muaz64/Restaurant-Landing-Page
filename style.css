@@ -11,8 +11,30 @@
     padding: 10px 30px;
     font-size: 1.2rem;
 }
+#hero {
+    height: 100vh;
+    background: url('hero-image.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+/*  smaller screens */
+
+@media (max-width: 768px) {
+    #hero {
+        background-position: top center;
+        background-size: contain;
+    }
+}
+
+@media (max-width: 576px) {
+    #hero {
+        height: 70vh; 
+        background-size: cover; 
+    }
+}
 
 /* About Section */
+
 #about{
    background-color: #fdf6ed;
 }

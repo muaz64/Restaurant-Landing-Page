@@ -21,6 +21,7 @@
 }
 
 /* Menu Section */
+
 #menu{
     background-color: #deb887;
 }
@@ -38,6 +39,17 @@
     object-fit: cover;
 }
 /* contact Section */
+
 #contact{
     background-color: #fdf6ed;
+}
+
+/* Footer */
+
+footer {
+    background-color: #deb887;
+}
+
+footer p {
+    margin: 0;
 }

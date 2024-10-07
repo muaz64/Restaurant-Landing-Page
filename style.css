@@ -6,7 +6,6 @@
     text-align: center;
 }
 
-
 #hero h1 {
     font-size: 4rem;
     font-weight: 700;
@@ -23,6 +22,11 @@
     background: url('hero-image.jpeg') no-repeat center center;
     background-size: cover;
 }
+#hero a:hover {
+    background-color: #00f114;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 /*  smaller screens */
 
@@ -77,25 +81,25 @@
 
 footer {
     
-        background-color: #0e2558;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-    
-    
+     background-color: #0e2558;
+    color: white;
+    padding: 20px 0;
+     text-align: center;
+       
 }
 
 footer p {
     margin: 0;
 }
+
 /* Social Icons Hover Effect */
+
 .social-icons a {
-    font-size: 1.5rem; /* Increase icon size */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1.5rem; 
+    transition: color 0.3s ease; 
 }
 
 .social-icons a:hover {
-    color: #4eb6c9; /* Change to a color of your choice */
-}
+    color: #0bccee; 
 
-  
+}

@@ -85,6 +85,12 @@
      height: 350px;
     object-fit: cover;
 }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(255, 223, 154, 0.685);
+    transition: all 0.3s ease-in-out;
+}
+
 /* contact Section */
 
 #contact{

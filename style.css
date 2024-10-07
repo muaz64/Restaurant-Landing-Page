@@ -1,3 +1,17 @@
+/*Nav section */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar {
+    background-color: rgba(14, 37, 88, 0.9);
+}
+
+
+
+
+
 /* Hero Section Customization */
 #hero {
     display: flex;

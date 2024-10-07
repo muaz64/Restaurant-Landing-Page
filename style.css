@@ -1,4 +1,11 @@
 /* Hero Section Customization */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 
 #hero h1 {
     font-size: 4rem;

@@ -9,9 +9,6 @@
 }
 
 
-
-
-
 /* Hero Section Customization */
 #hero {
     display: flex;
@@ -66,6 +63,12 @@
 #about img {
     border-radius:47%;
 }
+@media (max-width: 768px) {
+    #about p {
+        font-size: 1rem;
+    }
+}
+
 
 /* Menu Section */
 
@@ -107,10 +110,13 @@ footer {
      text-align: center;
        
 }
-
-footer p {
-    margin: 0;
+footer .social-icons {
+    margin-bottom: 10px;
 }
+footer p {
+    margin-top: 10px;
+}
+
 
 /* Social Icons Hover Effect */
 

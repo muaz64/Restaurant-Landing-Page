@@ -76,9 +76,26 @@
 /* Footer */
 
 footer {
-    background-color: #deb887;
+    
+        background-color: #0e2558;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    
+    
 }
 
 footer p {
     margin: 0;
 }
+/* Social Icons Hover Effect */
+.social-icons a {
+    font-size: 1.5rem; /* Increase icon size */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-icons a:hover {
+    color: #4eb6c9; /* Change to a color of your choice */
+}
+
+  

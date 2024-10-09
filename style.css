@@ -71,28 +71,54 @@
 
 
 /* Menu Section */
-
-#menu{
+#menu {
     background-color: #deb887;
 }
+
 #menu h2 {
     margin-bottom: 40px;
 }
 
-.card{
+.card {
     background-color: #f8e9d6;
+    perspective: 1000px; /* Added to give depth for 3D */
+    transform-style: preserve-3d; /* Enables 3D transform */
+    transition: all 0.5s ease-in-out;
 }
 
 .card img {
-
-     height: 350px;
+    height: 350px;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
 }
+
 .card:hover {
-    transform: translateY(-10px);
+    transform: rotateY(360deg); /* Rotating in both X and Y for 3D effect */
     box-shadow: 0 8px 16px rgba(255, 223, 154, 0.685);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
+
+.card-body {
+    transform: translateZ(30px); /* Makes the text and content appear more elevated */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px; /* Adjust the space for mobile view */
+        padding: 10px; /* Optional: Add padding inside the card */
+    }
+
+    .container {
+        padding: 0 15px; /* Ensure the container has some side padding */
+    }
+
+    .card img {
+        height: auto; /* Adjust image height for better mobile responsiveness */
+        width: 100%; /* Ensure image takes full width of the card */
+    }
+}
+
 
 /* contact Section */
 

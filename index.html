@@ -3,176 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Restaurant Landing Page</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>Delicious Bites - Order Online & Reserve Tables</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 </head>
-<body>
-
-<!-- Navbar Section -->
-
-<nav class="navbar navbar-expand-lg navbar-light" >
-    <div class="container">
-        <a class="navbar-brand text-white d-flex align-items-center" href="#">
-            <img src="delicious bites (Logo).png" alt="Delicious Bites Logo" class="rounded-circle" style="width: 50px; height: 30px; margin-right: 10px;">
-            Delicious Bites
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#hero">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#menu">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
- <!-- Hero Section -->
-<section id="hero" class="text-center text-white py-5">
-    <div class="container">
-        <h1>Welcome to Delicious Bites</h1>
-        <p class="lead">Taste the best meals in town</p>
-        <a href="#menu" class="btn btn-primary">Explore Menu</a>
-    </div>
-</section>
-
-
-   <!-- About Section -->
-   <section id="about" class="py-5 mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="About Uss.png" class="img-fluid" alt="About Us">
-            </div>
-            <div class="col-md-6">
-                <h2>About Us</h2>
-                <p>We are a family-owned restaurant that has been serving delicious, homemade food for over 20 years. Our chefs use only the freshest, locally sourced ingredients to prepare a wide variety of meals that will satisfy any palate. From comforting classics to bold, innovative dishes, we are committed to delivering a memorable dining experience for all of our guests. Whether you’re stopping in for a quick lunch, a family dinner, or a special occasion, you’ll find a warm, welcoming atmosphere that feels like home. Our diverse menu offers everything from hearty breakfasts to gourmet dinners, along with mouthwatering desserts and refreshing beverages. At Delicious Bites, we believe that great food brings people together, and we strive to create a dining experience that leaves you feeling nourished and delighted, every time.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
- <!-- Menu Section -->
- <section id="menu" class="py-5 mt-5">
-    <div class="container">
-        <h2 class="text-center">Our Menu</h2>
-        <div class="row text-center mt-4 ">
-            <div class="col-md-4 ">
-                <div class="card">
-                    <img src="dish1.jpg" class="card-img-top " alt="Dish 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Dish 1</h5>
-                        <p class="card-text">A delightful mix of flavors and textures.</p>
-                    </div>
+<body class="font-inter smooth-scroll bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full glass-effect z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-playfair text-2xl font-bold text-amber-700">
+                    🍽️ Delicious Bites
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="dish2.jpg" class="card-img-top" alt="Dish 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Dish 2</h5>
-                        <p class="card-text">A savory dish that will leave you want more.</p>
-                    </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-amber-700 transition-colors font-medium">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-amber-700 transition-colors font-medium">Menu</a>
+                    <a href="#about" class="text-gray-700 hover:text-amber-700 transition-colors font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-amber-700 transition-colors font-medium">Contact</a>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="dish3.jpg" class="card-img-top" alt="Dish 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Dish 3</h5>
-                        <p class="card-text">A sweet treat to end your meal perfectly </p>
-                    </div>
+                <div class="flex items-center space-x-4">
+                    <button id="cartBtn" class="relative bg-amber-100 text-amber-700 p-2 rounded-full hover:bg-amber-200 transition-colors">
+                        🛒
+                        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                    <button id="reserveBtn" class="bg-amber-700 text-white px-6 py-2 rounded-full hover:bg-amber-800 transition-colors font-medium">
+                        Reserve Table
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- Contact Section -->
-
-<section id="contact" class="py-5 mt-5">
-    <div class="container">
-        <h2 class="text-center">Contact Us</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h5>Location</h5>
-                <p>123 Main Street, Ctg, BD</p>
-                <h5>Phone</h5>
-                <p>(555) 123-4567</p>
-                <h5>Email</h5>
-                <p>deliciousbites2024BD@gmail.com</p>
-            </div>
-            <div class="col-md-6">
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="text-center max-w-4xl mx-auto px-4 relative z-10">
+            <h1 class="font-playfair text-5xl md:text-7xl font-bold mb-6 animate-pulse">
+                Delicious Bites
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light opacity-90">
+                Authentic Bengali flavors delivered to your doorstep. স্বাগতম!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('menu').scrollIntoView()" 
+                        class="bg-white text-amber-700 px-8 py-4 rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 font-semibold text-lg shadow-lg">
+                    🍛 Order Bengali Food
+                </button>
+                <button id="heroReserveBtn" class="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-amber-700 transition-all transform hover:scale-105 font-semibold text-lg">
+                    🪑 Reserve Table
+                </button>
             </div>
         </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl font-bold text-gray-900 mb-4">
+                    Bengali Menu - বাঙালি খাবার
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Traditional Bengali recipes with authentic spices and fresh ingredients
+                </p>
+            </div>
+            
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="menu-category active bg-amber-700 text-white px-6 py-3 rounded-full font-medium transition-all" data-category="all">
+                    All Items
+                </button>
+                <button class="menu-category bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-amber-100 transition-all" data-category="rice">
+                    Rice & Biryanis
+                </button>
+                <button class="menu-category bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-amber-100 transition-all" data-category="fish">
+                    Fish Curry
+                </button>
+                <button class="menu-category bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-amber-100 transition-all" data-category="vegetarian">
+                    Vegetarian
+                </button>
+                <button class="menu-category bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-amber-100 transition-all" data-category="sweets">
+                    Bengali Sweets
+                </button>
+            </div>
+            
+            <!-- Menu Items Grid -->
+            <div id="menuGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-playfair text-4xl font-bold text-gray-900 mb-6">
+                        আমাদের গল্প - Our Story
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Since 2005, Delicious Bites has been serving authentic Bengali cuisine with traditional recipes passed down through generations. From the bustling streets of Kolkata to your dining table, we bring the true taste of Bengal with fresh ingredients and time-honored cooking methods.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-700">18+</div>
+                            <div class="text-gray-600">Years of Tradition</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-700">75K+</div>
+                            <div class="text-gray-600">Bengali Food Lovers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-8 text-center">
+                    <div class="text-6xl mb-4">👨‍🍳</div>
+                    <h3 class="font-playfair text-2xl font-bold text-gray-900 mb-2">Chef Ranjan Das</h3>
+                    <p class="text-amber-700 font-semibold mb-2">Master of Bengali Cuisine</p>
+                    <p class="text-gray-600">25+ Years Experience</p>
+                    <p class="text-gray-600">Traditional Recipe Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl font-bold mb-4">Visit Our Restaurant</h2>
+                <p class="text-gray-300 text-lg">Experience fine dining in our elegant atmosphere</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-800 rounded-xl">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h3 class="font-bold text-xl mb-2 text-amber-400">Location</h3>
+                    <p class="text-gray-300">456 Bengal Street<br>Little Bangladesh<br>Jackson Heights, NY 11372</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-800 rounded-xl">
+                    <div class="text-4xl mb-4">🕒</div>
+                    <h3 class="font-bold text-xl mb-2 text-amber-400">Hours</h3>
+                    <p class="text-gray-300">
+                        Mon-Thu: 11:00 AM - 10:00 PM<br>
+                        Fri-Sat: 11:00 AM - 11:00 PM<br>
+                        Sun: 12:00 PM - 9:00 PM
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-800 rounded-xl">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="font-bold text-xl mb-2 text-amber-400">Contact</h3>
+                    <p class="text-gray-300">
+                        Phone: (718) 555-BITES<br>
+                        Email: info@deliciousbites.com<br>
+                        Orders: order@deliciousbites.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="font-playfair text-3xl font-bold text-amber-700 mb-4">
+                    🍽️ Delicious Bites
+                </div>
+                <p class="text-gray-400 mb-6">Authentic Bengali cuisine since 2005 - স্বাদের ঐতিহ্য</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <span class="text-2xl cursor-pointer hover:text-amber-700 transition-colors">📘</span>
+                    <span class="text-2xl cursor-pointer hover:text-amber-700 transition-colors">📷</span>
+                    <span class="text-2xl cursor-pointer hover:text-amber-700 transition-colors">🐦</span>
+                    <span class="text-2xl cursor-pointer hover:text-amber-700 transition-colors">📱</span>
+                </div>
+                <p class="text-gray-500">© 2024 Delicious Bites. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar" class="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+        <div class="p-6 border-b">
+            <div class="flex justify-between items-center">
+                <h3 class="font-playfair text-2xl font-bold text-gray-900">Your Order</h3>
+                <button id="closeCart" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+            </div>
+        </div>
+        
+        <div id="cartItems" class="p-6 flex-1">
+            <div id="emptyCart" class="text-center py-12">
+                <div class="text-6xl mb-4">🛒</div>
+                <p class="text-gray-500">Your cart is empty</p>
+                <p class="text-sm text-gray-400 mt-2">Add some delicious items to get started!</p>
+            </div>
+        </div>
+        
+        <div id="cartFooter" class="border-t p-6 hidden">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-bold text-lg">Total:</span>
+                <span id="cartTotal" class="font-bold text-xl text-amber-700">৳0.00</span>
+            </div>
+            <button id="checkoutBtn" class="w-full bg-amber-700 text-white py-3 rounded-lg hover:bg-amber-800 transition-colors font-semibold">
+                Proceed to Checkout
+            </button>
+        </div>
     </div>
-</section>
 
-
-<!-- Footer Section -->
-
-<footer class="text-center text-white mt-5" >
-
-    <!-- Social Media Icons -->
-
-    <div class="social-icons ">
-        <a href="https://facebook.com" target="_blank" class="text-white me-3">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" class="text-white me-3">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="text-white me-3">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank" class="text-white me-3">
-            <i class="fab fa-youtube"></i>
-          </a>
-      </div>
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 fade-in">
+            <div class="text-center mb-6">
+                <div class="text-4xl mb-2">🪑</div>
+                <h3 class="font-playfair text-2xl font-bold text-gray-900 mb-2">Reserve Your Table</h3>
+                <p class="text-gray-600">Book your perfect dining experience</p>
+            </div>
+            
+            <form id="reservationForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">First Name</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent" placeholder="John">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent" placeholder="Doe">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Email</label>
+                    <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent" placeholder="john@example.com">
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                    <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent" placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Date</label>
+                        <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Time</label>
+                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent">
+                            <option value="">Select time</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Party Size</label>
+                    <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent">
+                        <option value="">Select party size</option>
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                        <option value="7">7 people</option>
+                        <option value="8">8+ people</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Special Requests (Optional)</label>
+                    <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-700 focus:border-transparent" rows="3" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+                </div>
+                
+                <div class="flex space-x-4 pt-4">
+                    <button type="button" id="cancelReservation" class="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                        Cancel
+                    </button>
+                    <button type="submit" class="flex-1 px-6 py-3 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition-colors font-semibold">
+                        Reserve Table
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="container mt-4">
-      <p>© Muaz2024 Delicious Bites. All rights reserved.</p>
-      
-  </footer>
-  
 
+    <!-- Overlay for cart -->
+    <div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
 
-
-    <!-- Bootstrap JS and dependencies -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+   <script src="script.js"></script>
+<!-- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97bc5303f24fded3',t:'MTc1NzMxMjI2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script> -->
 </body>
 </html>

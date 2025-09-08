@@ -1,157 +1,84 @@
-/*Nav section */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.navbar {
-    background-color: rgba(14, 37, 88, 0.9);
-}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
-
-/* Hero Section Customization */
-#hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
 }
 
-#hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-}
-#hero p {
-    font-size: 1.5rem;
-}
-#hero a {
-    padding: 10px 30px;
-    font-size: 1.2rem;
-}
-#hero {
-    height: 100vh;
-    background: url('hero-image.jpeg') no-repeat center center;
-    background-size: cover;
-}
-#hero a:hover {
-    background-color: #00f114;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #27b6bb 50%, #3a8d89 100%);
 }
 
-
-/*  smaller screens */
-
-@media (max-width: 768px) {
-    #hero {
-        background-position: top center;
-        background-size: contain;
-    }
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (max-width: 576px) {
-    #hero {
-        height: 70vh; 
-        background-size: cover; 
-    }
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* About Section */
-
-#about{
-   background-color: #fdf6ed;
-}
-#about img {
-    border-radius:47%;
-}
-@media (max-width: 768px) {
-    #about p {
-        font-size: 1rem;
-    }
+.slide-in {
+  animation: slideIn 0.5s ease-out forwards;
 }
 
-
-/* Menu Section */
-#menu {
-    background-color: #deb887;
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-#menu h2 {
-    margin-bottom: 40px;
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
-.card {
-    background-color: #f8e9d6;
-    perspective: 1000px; /* Added to give depth for 3D */
-    transform-style: preserve-3d; /* Enables 3D transform */
-    transition: all 0.5s ease-in-out;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.card img {
-    height: 350px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+.cart-badge {
+  animation: bounce 0.5s ease-out;
 }
 
-.card:hover {
-    transform: rotateY(360deg); /* Rotating in both X and Y for 3D effect */
-    box-shadow: 0 8px 16px rgba(255, 223, 154, 0.685);
-    transition: all 0.5s ease-in-out;
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
 }
 
-.card-body {
-    transform: translateZ(30px); /* Makes the text and content appear more elevated */
+.smooth-scroll {
+  scroll-behavior: smooth;
 }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .card {
-        margin-bottom: 15px; /* Adjust the space for mobile view */
-        padding: 10px; /* Optional: Add padding inside the card */
-    }
-
-    .container {
-        padding: 0 15px; /* Ensure the container has some side padding */
-    }
-
-    .card img {
-        height: auto; /* Adjust image height for better mobile responsiveness */
-        width: 100%; /* Ensure image takes full width of the card */
-    }
-}
-
-
-/* contact Section */
-
-#contact{
-    background-color: #fdf6ed;
-}
-
-/* Footer */
-
-footer {
-    
-     background-color: #0e2558;
-    color: white;
-    padding: 20px 0;
-     text-align: center;
-       
-}
-footer .social-icons {
-    margin-bottom: 10px;
-}
-footer p {
-    margin-top: 10px;
-}
-
-
-/* Social Icons Hover Effect */
-
-.social-icons a {
-    font-size: 1.5rem; 
-    transition: color 0.3s ease; 
-}
-
-.social-icons a:hover {
-    color: #0bccee; 
-
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
 }

@@ -1,84 +1,102 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap");
-
 .font-playfair {
-  font-family: "Playfair Display", serif;
-}
-.font-inter {
-  font-family: "Inter", sans-serif;
+    font-family: "Playfair Display", serif;
 }
 
+.font-inter {
+    font-family: "Inter", sans-serif;
+}
+
+/* Use Tailwind-friendly custom classes for consistency */
 .hero-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #27b6bb 50%, #3a8d89 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #27b6bb 50%, #3a8d89 100%);
 }
 
 .card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .slide-in {
-  animation: slideIn 0.5s ease-out forwards;
+    animation: slideIn 0.5s ease-out forwards;
 }
 
 @keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
+    animation: fadeIn 0.3s ease-out forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .cart-badge {
-  animation: bounce 0.5s ease-out;
+    animation: bounce 0.5s ease-out;
 }
 
 @keyframes bounce {
-  0%,
-  20%,
-  53%,
-  80%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  40%,
-  43% {
-    transform: translate3d(0, -8px, 0);
-  }
-  70% {
-    transform: translate3d(0, -4px, 0);
-  }
-  90% {
-    transform: translate3d(0, -2px, 0);
-  }
+
+    0%,
+    20%,
+    53%,
+    80%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+        transform: translate3d(0, -8px, 0);
+    }
+
+    70% {
+        transform: translate3d(0, -4px, 0);
+    }
+
+    90% {
+        transform: translate3d(0, -2px, 0);
+    }
 }
 
 .smooth-scroll {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 .glass-effect {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* New notification toast styles */
+#toast {
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+#toast.show {
+    transform: translateY(0);
+    opacity: 1;
 }
